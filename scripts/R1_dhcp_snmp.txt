@@ -1,0 +1,18 @@
+! Configuración de DHCP y SNMP en R1 (IOS, modo privilegiado)
+configure terminal
+interface GigabitEthernet1/0
+ description LAN_CLIENTES
+ ip address 10.8.46.129 255.255.255.128
+ no shutdown
+exit
+ip dhcp excluded-address 10.8.46.129
+ip dhcp pool LAN_CLIENTES
+ network 10.8.46.128 255.255.255.128
+ default-router 10.8.46.129
+ dns-server 8.8.8.8
+exit
+snmp-server community PUBLIC_LAB RO
+snmp-server location Laboratorio
+snmp-server contact Erick
+end
+write memory

@@ -1,0 +1,13 @@
+! Configuración de IP y SNMP en SW1 (IOSvL2)
+configure terminal
+hostname SW1
+interface Vlan1
+ ip address 10.8.46.200 255.255.255.128
+ no shutdown
+exit
+ip default-gateway 10.8.46.129
+snmp-server community PUBLIC_LAB RO
+snmp-server location Laboratorio
+snmp-server contact Erick
+end
+write memory
