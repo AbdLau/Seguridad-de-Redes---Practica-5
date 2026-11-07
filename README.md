@@ -14,7 +14,7 @@ Configurar un router Cisco (R1) y un switch Cisco (SW1) con direccionamiento IP,
 graph LR
     KALI[Kali Linux - Zabbix<br/>eth1 DHCP 10.8.46.131/132] -->|LAN 10.8.46.128/25| R1[R1 Gi1/0<br/>10.8.46.129/25]
     R1 -->|f0/0 - Gi0/1| SW1[SW1 Vlan1<br/>10.8.46.200/25]
-    SW1 --- CLOUD[Cloud1 GNS3 VM]
+    SW1
 ```
 
 ![Topología GNS3](imagenes/01_topologia_gns3.png)
